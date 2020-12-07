@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1
             labelNama.Font = new Font("Arial", 10, FontStyle.Italic);
             labelNama.Text = textBoxNama.Text;
             comboBoxNama.Items.Add(textBoxNama.Text);
+            listBoxNama.Items.Add(textBoxNama.Text);
         }
 
         
@@ -41,12 +42,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Data telah diinput di combobox!");
                 buttonUbah_Click(sender, e);
+                textBoxNama.Text = "";
             }
         }
 
         private void comboBoxNama_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            labelNama.Text = Convert.ToString(comboBoxNama.SelectedItem);
         }
     }
 }
